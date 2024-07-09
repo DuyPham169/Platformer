@@ -69,7 +69,11 @@ public class Player : MonoBehaviour
         UpdateAirborneStatus();
 
         if (canBeControlled == false)
+        {
+            HandleAnimations();
+            HandleCollision();
             return;
+        }
 
         if (isKnocked)
             return;
@@ -98,25 +102,51 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Knockback(){
+    public void Knockback(float sourceDamageXPosition)
+    {
+        float knockbackDir = 1;
+
+        if (transform.position.x < sourceDamageXPosition)
+            knockbackDir = -1;
+
         if (isKnocked)
             return;
 
         StartCoroutine(KnockbackRoutine());
-        anim.SetTrigger("knockback");
-        rb.velocity = new Vector2(knockbackPower.x * -facingDir, knockbackPower.y);
+        rb.velocity = new Vector2(knockbackPower.x * knockbackDir, knockbackPower.y);
     }
 
     private IEnumerator KnockbackRoutine()
     {
         isKnocked = true;
+        anim.SetBool("isKnocked", true);
+
         yield return new WaitForSeconds(knockbackDuration);
+
         isKnocked = false;
+        anim.SetBool("isKnocked", false);
     }
 
     public void Die() {
         GameObject newDeathVfx = Instantiate(deathVfx, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    public void Push(Vector3 direction, float duration = 0)
+    {
+        StartCoroutine(PushCoroutine(direction, duration));
+    }
+
+    private IEnumerator PushCoroutine(Vector2 direction, float duration)
+    {
+        canBeControlled = false;
+
+        rb.velocity = Vector2.zero;
+        rb.AddForce(direction, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(duration);
+
+        canBeControlled = true;
     }
 
     private void UpdateAirborneStatus()

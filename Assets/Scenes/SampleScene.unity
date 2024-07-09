@@ -269,8 +269,10 @@ MonoBehaviour:
   respawnPoint: {fileID: 1250861097}
   respawnDelay: 1.5
   player: {fileID: 488217822}
-  fruitsHaveRandomLook: 0
+  fruitsAreRandom: 0
   fruitsCollected: 0
+  totalFruits: 0
+  canReactivate: 0
 --- !u!4 &220825587
 Transform:
   m_ObjectHideFlags: 0
@@ -8466,7 +8468,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1194685941
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -11325,7 +11327,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 2, y: 2, z: 0}
+  - first: {x: 1, y: 2, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 7
@@ -11335,7 +11337,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 3, y: 2, z: 0}
+  - first: {x: 2, y: 2, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 1
@@ -11565,7 +11567,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 2, y: 3, z: 0}
+  - first: {x: 1, y: 3, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -11575,7 +11577,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 3, y: 3, z: 0}
+  - first: {x: 2, y: 3, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 11
@@ -13191,13 +13193,13 @@ CompositeCollider2D:
         Y: -110000000
       - X: -120000000
         Y: -110000000
-    - - X: 40000000
+    - - X: 30000000
         Y: 40000000
-      - X: 20000000
+      - X: 10000000
         Y: 40000000
-      - X: 20000000
+      - X: 10000000
         Y: 20000000
-      - X: 40000000
+      - X: 30000000
         Y: 20000000
     - - X: -20000000
         Y: 40000000
@@ -13287,10 +13289,10 @@ CompositeCollider2D:
       - {x: 17.999971, y: 11}
       - {x: -20, y: 10.99997}
       - {x: -19.999971, y: -11}
-    - - {x: 3.999971, y: 2}
-      - {x: 3.999971, y: 4}
-      - {x: 2, y: 3.999971}
-      - {x: 2.0000293, y: 2}
+    - - {x: 2.999971, y: 2}
+      - {x: 2.999971, y: 4}
+      - {x: 1, y: 3.999971}
+      - {x: 1.0000293, y: 2}
     - - {x: -2.0000293, y: 2}
       - {x: -2.0000293, y: 4}
       - {x: -9, y: 3.999971}
@@ -13404,6 +13406,177 @@ Transform:
   - {fileID: 1703531769}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &142166875046427052
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2214205919213588399, guid: b57f8085f1f79e445a45041137ebe5ef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214205919213588399, guid: b57f8085f1f79e445a45041137ebe5ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214205919213588399, guid: b57f8085f1f79e445a45041137ebe5ef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214205919213588399, guid: b57f8085f1f79e445a45041137ebe5ef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214205919213588399, guid: b57f8085f1f79e445a45041137ebe5ef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214205919213588399, guid: b57f8085f1f79e445a45041137ebe5ef, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214205919213588399, guid: b57f8085f1f79e445a45041137ebe5ef, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214205919213588399, guid: b57f8085f1f79e445a45041137ebe5ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214205919213588399, guid: b57f8085f1f79e445a45041137ebe5ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214205919213588399, guid: b57f8085f1f79e445a45041137ebe5ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308142321747763025, guid: b57f8085f1f79e445a45041137ebe5ef, type: 3}
+      propertyPath: m_Name
+      value: TrapSaw
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b57f8085f1f79e445a45041137ebe5ef, type: 3}
+--- !u!1001 &903743059230835863
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2501506392116810610, guid: 1cba7e19dd5529f42bcdc66faa0a69e9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501506392116810610, guid: 1cba7e19dd5529f42bcdc66faa0a69e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501506392116810610, guid: 1cba7e19dd5529f42bcdc66faa0a69e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501506392116810610, guid: 1cba7e19dd5529f42bcdc66faa0a69e9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501506392116810610, guid: 1cba7e19dd5529f42bcdc66faa0a69e9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501506392116810610, guid: 1cba7e19dd5529f42bcdc66faa0a69e9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501506392116810610, guid: 1cba7e19dd5529f42bcdc66faa0a69e9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501506392116810610, guid: 1cba7e19dd5529f42bcdc66faa0a69e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501506392116810610, guid: 1cba7e19dd5529f42bcdc66faa0a69e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501506392116810610, guid: 1cba7e19dd5529f42bcdc66faa0a69e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848025997645760181, guid: 1cba7e19dd5529f42bcdc66faa0a69e9, type: 3}
+      propertyPath: m_Name
+      value: TrapSpike
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1cba7e19dd5529f42bcdc66faa0a69e9, type: 3}
+--- !u!1001 &934205068708903460
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6898683261837854825, guid: 4d96af4adfe56e14ea4263207087d0fc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898683261837854825, guid: 4d96af4adfe56e14ea4263207087d0fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898683261837854825, guid: 4d96af4adfe56e14ea4263207087d0fc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898683261837854825, guid: 4d96af4adfe56e14ea4263207087d0fc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898683261837854825, guid: 4d96af4adfe56e14ea4263207087d0fc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898683261837854825, guid: 4d96af4adfe56e14ea4263207087d0fc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898683261837854825, guid: 4d96af4adfe56e14ea4263207087d0fc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898683261837854825, guid: 4d96af4adfe56e14ea4263207087d0fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898683261837854825, guid: 4d96af4adfe56e14ea4263207087d0fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898683261837854825, guid: 4d96af4adfe56e14ea4263207087d0fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803437392204974969, guid: 4d96af4adfe56e14ea4263207087d0fc, type: 3}
+      propertyPath: m_Name
+      value: TrapTrampoline
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4d96af4adfe56e14ea4263207087d0fc, type: 3}
 --- !u!1001 &1266775013626945180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13533,3 +13706,6 @@ SceneRoots:
   - {fileID: 1703189427}
   - {fileID: 7776341646485632354}
   - {fileID: 1810215434}
+  - {fileID: 903743059230835863}
+  - {fileID: 142166875046427052}
+  - {fileID: 934205068708903460}
