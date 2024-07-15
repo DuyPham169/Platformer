@@ -273,6 +273,7 @@ MonoBehaviour:
   fruitsCollected: 0
   totalFruits: 0
   canReactivate: 0
+  arrowPrefab: {fileID: 7070293383406496884, guid: c19284c3e7395684b8bd522374fd4942, type: 3}
 --- !u!4 &220825587
 Transform:
   m_ObjectHideFlags: 0
@@ -13572,6 +13573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrapTrampoline
       objectReference: {fileID: 0}
+    - target: {fileID: 8803437392204974969, guid: 4d96af4adfe56e14ea4263207087d0fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13591,11 +13596,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2457283996089621479, guid: e89d64f46fe52a449a447130c58e8f00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.4
+      value: -3.48
       objectReference: {fileID: 0}
     - target: {fileID: 2457283996089621479, guid: e89d64f46fe52a449a447130c58e8f00, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.4
+      value: -6.03
       objectReference: {fileID: 0}
     - target: {fileID: 2457283996089621479, guid: e89d64f46fe52a449a447130c58e8f00, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13634,6 +13639,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e89d64f46fe52a449a447130c58e8f00, type: 3}
+--- !u!1001 &6972566294315977966
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4270256603309716475, guid: c19284c3e7395684b8bd522374fd4942, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270256603309716475, guid: c19284c3e7395684b8bd522374fd4942, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270256603309716475, guid: c19284c3e7395684b8bd522374fd4942, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270256603309716475, guid: c19284c3e7395684b8bd522374fd4942, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270256603309716475, guid: c19284c3e7395684b8bd522374fd4942, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270256603309716475, guid: c19284c3e7395684b8bd522374fd4942, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270256603309716475, guid: c19284c3e7395684b8bd522374fd4942, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270256603309716475, guid: c19284c3e7395684b8bd522374fd4942, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270256603309716475, guid: c19284c3e7395684b8bd522374fd4942, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270256603309716475, guid: c19284c3e7395684b8bd522374fd4942, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7070293383406496884, guid: c19284c3e7395684b8bd522374fd4942, type: 3}
+      propertyPath: m_Name
+      value: TrapArrow
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c19284c3e7395684b8bd522374fd4942, type: 3}
 --- !u!1001 &7776341646485632354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13709,3 +13771,4 @@ SceneRoots:
   - {fileID: 903743059230835863}
   - {fileID: 142166875046427052}
   - {fileID: 934205068708903460}
+  - {fileID: 6972566294315977966}
