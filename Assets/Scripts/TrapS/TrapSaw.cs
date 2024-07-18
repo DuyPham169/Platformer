@@ -31,6 +31,18 @@ public class TrapSaw : MonoBehaviour
 
     private void UpdateWaypointsInfo()
     {
+        List < TrapSawWayPoint > waypointList= new List<TrapSawWayPoint>(GetComponentsInChildren<TrapSawWayPoint>());
+
+        if (waypointList.Count != wayPoint.Length)
+        {
+            wayPoint = new Transform[waypointList.Count];
+
+            for (int i = 0; i < waypointList.Count; ++i)
+            {
+                wayPoint[i] = waypointList[i].transform;
+            }
+        }
+
         wayPointPosition = new Vector3[wayPoint.Length];
 
         for (int i = 0; i < wayPoint.Length; ++i)
